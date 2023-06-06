@@ -129,9 +129,6 @@ function Main() {
                     </div>
                 </div>
                 <Infomation />
-                <div className="...">05</div>
-                <div className="...">06</div>
-                <div className="col-span-2 ...">07</div>
             </div>
         </main>
     )

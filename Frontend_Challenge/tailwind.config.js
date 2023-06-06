@@ -7,6 +7,9 @@ export default {
       borderRadius: {
         inherit: "inherit",
       },
+      border: {
+        '7px': "7px"
+      },
       boxShadow: {
         sm: "0px 2px 2px rgba(0, 0, 0, 0.12)",
         md: "0px 4px 8px rgba(0, 0, 0, 0.04), 0px 2px 4px rgba(0, 0, 0, 0.08)",
@@ -36,18 +39,26 @@ export default {
         },
         red: {
           16: "#EA5455"
+        },
+        purple: {
+          16: "#B0A9F7",
+          32: "#8F85F3"
         }
       },
       height: {
         '18px': '18px',
         '38': '38px',
+        '72px': '72px'
       },
       width: {
         '18px': '18px',
         '38': '38px',
+        '72px': '72px'
+
       },
       lineHeight: {
         '14': '14px',
+        '18': '18px',
         '22': '22px',
         '26': "26px"
       },
@@ -67,6 +78,8 @@ export default {
         '26px': '26px',
         '30px': '30px',
         '33px': '33px',
+        '35px': '35px',
+        '38px': '38px',
         '39px': '39px',
         '43px': '43px',
         '45px': '45px',
@@ -76,6 +89,7 @@ export default {
       margin: {
         '3px': "3px",
         '18px': "18px",
+        '26px': "26px",
         '30px': '30px',
         '33px': '33px'
       },
