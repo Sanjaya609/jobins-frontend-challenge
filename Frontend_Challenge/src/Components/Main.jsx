@@ -11,7 +11,7 @@ import Table from './Table'
 function Main() {
     return (
         <main className="pl-[26px] pr-7 grow h-screen bg-gray-16 pt-2 pb-[30px]">
-            <div>
+            <header>
                 <div className="flex w-100 py-3">
                     <div className="grow py-2">
                         <p className="font-bold text-2xl leading-22">Dashboard</p>
@@ -29,8 +29,8 @@ function Main() {
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="grid grid-cols-12 gap-4">
+            </header>
+            <body className="grid grid-cols-12 gap-4">
                 <div className="col-span-4 ">
                     <div className='flex pb-7 pt-5 pr-[52px] pl-[43px] bg-white rounded-2xl w-full'>
                         <div className=' border-e border-gray-64 pr-[39px] pt-[45px] pb-[33px] '>
@@ -43,7 +43,11 @@ function Main() {
                             </div>
                             <div className='sales'>
                                 <p className='text-5xl text-dark-16 font-bold leading-8 mb-4'>$350K</p>
-                                <div className='text-sm leading-5 font-medium text-gray-48'><span className='text-green-32 '><ArrowUp />8.56K</span> vs last 7 days</div>
+                                <div className='text-sm leading-5 font-medium text-gray-48'>
+                                    <div className='text-green-32 flex items-center'><ArrowUp className='mr-1' />
+                                        8.56K
+                                        <span className='text-gray-48 ml-2'>   vs last 7 days</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -60,7 +64,11 @@ function Main() {
                         <div className='flex flex-col'>
                             <div className='sales'>
                                 <p className='text-5xl text-dark-16 font-bold leading-8 mb-4'>50K</p>
-                                <div className='text-sm leading-5 font-medium text-gray-48'><span className='text-green-32 '> <ArrowUp />12%</span> vs last 7 days</div>
+                                <div className='text-sm leading-5 font-medium text-gray-48'>
+                                    <div className='text-green-32 flex items-center'><ArrowUp className='mr-1' />
+                                        12%
+                                        <span className='text-gray-48 ml-2'>   vs last 7 days</span></div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -154,7 +162,7 @@ function Main() {
                     </div>
                 </div>
                 <Table />
-            </div>
+            </body>
         </main>
     )
 }

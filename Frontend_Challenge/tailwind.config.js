@@ -43,6 +43,9 @@ export default {
         purple: {
           16: "#B0A9F7",
           32: "#8F85F3"
+        },
+        yellow: {
+          16: '#FFC600'
         }
       },
       height: {
@@ -60,7 +63,8 @@ export default {
         '14': '14px',
         '18': '18px',
         '22': '22px',
-        '26': "26px"
+        '26': "26px",
+        '100': "100%"
       },
       fontSize: {
         '11px': '11px',
