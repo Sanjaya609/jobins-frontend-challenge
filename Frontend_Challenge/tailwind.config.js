@@ -72,6 +72,7 @@ export default {
       },
       padding: {
         '9px': '9px',
+        '11px': "11px",
         '15px': '15px',
         '18px': '18px',
         '22px': '22px',

@@ -2,10 +2,11 @@ import Bell from '../assets/bell.svg'
 import Business from '../assets/business.svg'
 import Yen from '../assets/yen.svg'
 import USA from '../assets/Usa.svg'
-import { CaretUp, ArrowUp, CaretDown } from 'phosphor-react'
+import { CaretUp, ArrowUp, CaretDown, MagnifyingGlass } from 'phosphor-react'
 import Brazil from '../assets/brazil.svg'
 import Australia from '../assets/australia.svg'
 import Infomation from './Infomation'
+import Table from './Table'
 
 function Main() {
     return (
@@ -129,6 +130,30 @@ function Main() {
                     </div>
                 </div>
                 <Infomation />
+                <div className='col-span-12'>
+                    <div className='flex w-full'>
+                        <div className='grow'>
+                            <div className='flex w-full'>
+                                <button type="button" className="text-gray-48 bg-white focus:outline-none font-medium rounded-lg text-sm px-4 py-[11px] flex items-center ">
+                                    Status : All
+                                    <CaretDown className='ml-1.5' />
+                                </button>
+                                <div className='flex items-center ml-[14px] bg-white px-4 py-2 rounded-lg'>
+                                    <input type="text" className="leading-5 text-sm text-gray-48 text-sm focus:outline-none  block w-full
+                                " placeholder='Search...' />
+                                    <MagnifyingGlass size={18} className='text-gray-48' />
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <button type="button" className="text-gray-48 bg-white focus:outline-none font-medium rounded-lg text-sm px-4 py-[11px] flex items-center ">
+                                Filter by date range
+                                <CaretDown className='ml-1.5' />
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <Table />
             </div>
         </main>
     )
