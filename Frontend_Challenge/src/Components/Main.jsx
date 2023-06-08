@@ -10,16 +10,16 @@ import Table from './Table'
 
 function Main() {
     return (
-        <main className="pl-[26px] pr-7 grow h-screen bg-gray-16 pt-2 pb-[30px]">
+        <main className="pl-[26px] pr-7 grow bg-gray-16 pt-2 pb-[30px]">
             <header>
-                <div className="flex w-100 py-3">
+                <div className="flex w-full py-3">
                     <div className="grow py-2">
-                        <p className="font-bold text-2xl leading-22">Dashboard</p>
+                        <p className="font-bold text-2xl leading-100">Dashboard</p>
                     </div>
                     <div className='flex justify-between items-center'>
-                        <div className='mr-6 relative'>
+                        <div className='mr-6 relative h-[26px] w-[26px] flex items-center justify-center'>
                             <img src={Bell} alt="notification-bell" />
-                            <div className='h-[18px] w-[18px] absolute right-0 top-0 flex items-center justify-center'>
+                            <div className='h-[18px] w-[18px] absolute right-0 top-0 bg-red-16 rounded-full -mt-1 -mr-1.5 flex items-center justify-center'>
                                 <p className='text-[13px]'>4</p>
                             </div>
                         </div>
@@ -30,51 +30,51 @@ function Main() {
                     </div>
                 </div>
             </header>
-            <body className="grid grid-cols-12 gap-4">
-                <div className="col-span-4 ">
-                    <div className='flex pb-7 pt-5 pr-[52px] pl-[43px] bg-white rounded-2xl w-full'>
-                        <div className=' border-e border-gray-64 pr-[39px] pt-[45px] pb-[33px] '>
+            <div className="grid grid-cols-12 gap-4">
+                <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 ">
+                    <div className='flex  p-6 bg-white rounded-2xl w-full h-full' >
+                        <div className='grow border-e border-gray-64 flex justify-center items-center '>
                             <img src={Business} alt="business-growth" />
                         </div>
                         <div className='flex flex-col ml-[33px]'>
                             <div className='title mb-[30px]'>
-                                <p className='text-lg font-semibold leading-26 text-dark-16'>Total Sales & Costs</p>
-                                <p className='text-sm leading-5 text-gray-48 mt-1'>Last 7 days</p>
+                                <p className='text-lg font-semibold leading-100 text-dark-16'>Total Sales & Costs</p>
+                                <p className='text-sm leading-100 text-gray-48 mt-1'>Last 7 days</p>
                             </div>
                             <div className='sales'>
-                                <p className='text-5xl text-dark-16 font-bold leading-8 mb-4'>$350K</p>
-                                <div className='text-sm leading-5 font-medium text-gray-48'>
+                                <p className='text-5xl text-dark-16 font-bold leading-100 mb-4'>$350K</p>
+                                <div className='text-sm leading-100 font-medium text-gray-48'>
                                     <div className='text-green-32 flex items-center'><ArrowUp className='mr-1' />
                                         8.56K
-                                        <span className='text-gray-48 ml-2'>   vs last 7 days</span></div>
+                                        <span className='text-gray-48 ml-2 whitespace-nowrap'>   vs last 7 days</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-span-3">
-                    <div className='bg-white rounded-2xl w-full pt-[18px] pl-6 pb-6' >
+                <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 ">
+                    <div className='bg-white rounded-2xl w-full p-6' >
                         <div className=' flex  mb-10 '>
                             <img src={Yen} alt="business-growth" />
                             <div className='ml-[22px]'>
-                                <p className='text-lg font-semibold leading-26 text-dark-16'>Total Profit</p>
-                                <p className='text-sm leading-5 text-gray-48 '>Last 7 days</p>
+                                <p className='text-lg font-semibold leading-100 text-dark-16'>Total Profit</p>
+                                <p className='text-sm leading-100 text-gray-48 '>Last 7 days</p>
                             </div>
                         </div>
                         <div className='flex flex-col'>
                             <div className='sales'>
-                                <p className='text-5xl text-dark-16 font-bold leading-8 mb-4'>50K</p>
-                                <div className='text-sm leading-5 font-medium text-gray-48'>
+                                <p className='text-5xl text-dark-16 font-bold leading-100 mb-4'>50K</p>
+                                <div className='text-sm leading-100 font-medium text-gray-48'>
                                     <div className='text-green-32 flex items-center'><ArrowUp className='mr-1' />
                                         12%
-                                        <span className='text-gray-48 ml-2'>   vs last 7 days</span></div>
+                                        <span className='text-gray-48 ml-2 whitespace-nowrap'>   vs last 7 days</span></div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className="col-span-5">
-                    <div className='bg-white rounded-2xl w-full pt-6 pl-6 pb-6 px-[26px]' >
+                <div className="sm:col-span-12 md:col-span-12 lg:col-span-4 ">
+                    <div className='bg-white rounded-2xl w-full p-6' >
                         <div className="flex w-full items-center mb-[18px]">
                             <div className='flex grow items-center mr-4'>
                                 <div className='flex items-center mr-4' >
@@ -147,7 +147,7 @@ function Main() {
                                     <CaretDown className='ml-1.5' />
                                 </button>
                                 <div className='flex items-center ml-[14px] bg-white px-4 py-2 rounded-lg'>
-                                    <input type="text" className="leading-5 text-sm text-gray-48 text-sm focus:outline-none  block w-full
+                                    <input type="text" className="leading-100 text-sm text-gray-48 text-sm focus:outline-none  block w-full
                                 " placeholder='Search...' />
                                     <MagnifyingGlass size={18} className='text-gray-48' />
                                 </div>
@@ -162,7 +162,7 @@ function Main() {
                     </div>
                 </div>
                 <Table />
-            </body>
+            </div>
         </main>
     )
 }

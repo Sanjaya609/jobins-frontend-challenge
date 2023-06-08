@@ -4,6 +4,11 @@ export default {
 
   theme: {
     extend: {
+      container: {
+        center: true,
+        padding: '2rem',
+      },
+
       borderRadius: {
         inherit: "inherit",
       },
@@ -26,7 +31,8 @@ export default {
           16: "#F5F5F5",
           32: "#F3F4F8",
           48: "#8B909A",
-          64: "#DBDADE"
+          64: "#DBDADE",
+          80: "#F1F2F6"
         },
         dark: {
           16: "#23272E",
@@ -50,14 +56,17 @@ export default {
       },
       height: {
         '18px': '18px',
+        '26px': "26px",
         '38': '38px',
-        '72px': '72px'
+        '72px': '72px',
+        '1035': '1035px',
       },
       width: {
         '18px': '18px',
+        '26px': "26px",
         '38': '38px',
-        '72px': '72px'
-
+        '72px': '72px',
+        '1440': '1440px',
       },
       lineHeight: {
         '14': '14px',
@@ -99,10 +108,13 @@ export default {
         '33px': '33px'
       },
       screens: {
-        xs: "475px",
-        xxl: "1536px",
+        'sm': '640px',
+        'md': '768px',
+        'lg': '1024px',
+        'xl': '1280px',
+        '2xl': '1440px',
+        '3xl': "1550px"
       },
-
     },
   },
   plugins: [],

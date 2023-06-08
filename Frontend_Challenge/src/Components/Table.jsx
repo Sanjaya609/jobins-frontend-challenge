@@ -1,9 +1,13 @@
-import { CaretDown } from "phosphor-react"
+import { CaretDown, CaretLeft, CaretRight } from "phosphor-react"
+import { useState } from "react"
+import { paginationDescStyle } from "../ClassNames/classNames"
 
 
 const headerOption = [
     "ID", "Customer", "Date", "Total", "Method", "Status", "Action"
 ]
+
+const pages = [1, 2, 3, 4, 5]
 const tableRow = [
     {
         id: "#5089",
@@ -49,6 +53,8 @@ const tableRow = [
     }
 ]
 function Table() {
+    const [selectedPage, setSelectedPage] = useState(1)
+
     return (
         <div className="col-span-12 bg-white ">
             <div className="relative overflow-x-auto overflow-hidden py-2">
@@ -93,10 +99,10 @@ function Table() {
 
                     </tbody>
                 </table>
-                <nav className="flex items-center justify-between pt-4">
+                <nav className="flex items-center justify-between px-6 py-[26px]">
                     <div className="flex leading-100 font-normal text-gray-48 items-center">
                         <div className="mr-2">
-                            <p>
+                            <p className={paginationDescStyle}>
                                 Showing
                             </p>
                         </div>
@@ -107,42 +113,33 @@ function Table() {
                             <CaretDown />
                         </div>
                         <div>
-                            <p>
+                            <p className={paginationDescStyle}>
                                 of 50
                             </p>
                         </div>
                     </div>
-                    {/* <p className="text-[15px]  flex items-center">
-                        <div className="font-semibold text-gray-900 flex px-5 border">10 <CaretDown /></div> of
-                        <p className="font-semibold text-gray-900">1000</p>
-                    </p> */}
-                    <ul className="inline-flex items-center -space-x-px">
-                        <li>
-                            <a href="#" className="block px-3 py-2 ml-0 leading-tight text-gray-500 bg-white border border-gray-300 rounded-l-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                    <ul className="inline-flex items-center">
+                        <li className="mr-0.5 p-1.5 bg-gray-80 rounded-lg" >
+                            <p href="#" className="block  text-gray-48  ">
                                 <span className="sr-only">Previous</span>
-                                <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
-                            </a>
+                                <CaretLeft size={16} />
+                            </p>
                         </li>
-                        <li>
-                            <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">1</a>
-                        </li>
-                        <li>
-                            <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">2</a>
-                        </li>
-                        <li>
-                            <a href="#" aria-current="page" className="z-10 px-3 py-2 leading-tight text-blue-600 border border-blue-300 bg-blue-50 hover:bg-blue-100 hover:text-blue-700 dark:border-gray-700 dark:bg-gray-700 dark:text-white">3</a>
-                        </li>
-                        <li>
-                            <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">...</a>
-                        </li>
-                        <li>
-                            <a href="#" className="px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">100</a>
-                        </li>
-                        <li>
-                            <a href="#" className="block px-3 py-2 leading-tight text-gray-500 bg-white border border-gray-300 rounded-r-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">
+                        {
+                            pages?.map((page, index) =>
+                                <li key={index}
+                                    className={`mr-0.5 py-1.5 px-3  rounded-lg ${selectedPage === page ? "bg-blue-48 text-white" : "bg-gray-80 text-gray-48"}`}
+                                    onClick={() => setSelectedPage(page)}>
+                                    <p href="#" className="   text-[13px] ">{page}</p>
+                                </li>
+
+                            )
+                        }
+                        <li className="p-1.5 bg-gray-80 rounded-lg">
+                            <p href="#" className="block  text-gray-48 ">
                                 <span className="sr-only">Next</span>
-                                <svg className="w-5 h-5" aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fillRule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd"></path></svg>
-                            </a>
+                                <CaretRight size={16} />
+                            </p>
                         </li>
                     </ul>
                 </nav >

@@ -5,9 +5,11 @@ function App() {
 
   return (
     <>
-      <div className="flex">
-        <Sidebar />
-        <Main />
+      <div className="3xl:container !px-0 m-auto scrollbars relative">
+        <div className="flex">
+          <Sidebar />
+          <Main />
+        </div>
       </div>
     </>
   )

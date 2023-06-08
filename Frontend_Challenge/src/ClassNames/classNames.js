@@ -1,0 +1,1 @@
+export const paginationDescStyle = "text-[15px] leading-100 font-medium text-gray-48"

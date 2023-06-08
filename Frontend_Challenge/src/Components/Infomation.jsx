@@ -1,16 +1,35 @@
+import { useState } from "react"
 
+
+const tabOption = [
+    {
+        label: "All Order",
+        value: "allOrder"
+    },
+    {
+        label: "Completed",
+        value: "completed"
+
+    },
+    {
+        label: "Canceled",
+        value: "canceled"
+
+    }
+]
 function Infomation() {
+    const [activeTab, setActiveTab] = useState("allOrder")
     return (
         <div className="col-span-12 mt-4">
             <div className="bg-white rounded-2xl w-full grid grid-cols-12 pt-6 px-10">
-                <div className="col-span-4 flex items-center h-full border-r border-gray-64 pt-[33px] pb-[38px]">
+                <div className=" sm:col-span-12 md:col-span-6 lg:col-span-4 flex items-center h-full border-r border-gray-64 pt-[33px] pb-[38px]">
                     <div className="w-[72px] h-[72px] bg-purple-16 rounded-full border-[7px] border-purple-32 mr-4" />
                     <div>
-                        <p className="text-lg text-dark-16 font-semibold leading-22">Robert Fox</p>
-                        <p className="text-[15px] text-gray-48 font-normal leading-22">robert@gmail.com</p>
+                        <p className="text-lg text-dark-16 font-semibold leading-100">Robert Fox</p>
+                        <p className="text-[15px] text-gray-48 font-normal leading-100">robert@gmail.com</p>
                     </div>
                 </div>
-                <div className="col-span-4 px-6 flex h-full border-r border-gray-64 flex-col pb-[35px]">
+                <div className="sm:col-span-6 md:col-span-6 lg:col-span-4  px-6 flex h-full border-r border-gray-64 flex-col pb-[35px]">
                     <div>
                         <p className="font-medium text-[13px] text-gray-48">PERSONAL INFORMATION</p>
                     </div>
@@ -27,40 +46,46 @@ function Infomation() {
                         </div>
                     </div>
                 </div>
-                <div className="col-span-4 px-6 flex h-full flex-col pb-[35px]">
+                <div className="sm:col-span-6 md:col-span-6 lg:col-span-4  px-6 flex h-full flex-col pb-[35px]">
                     <div>
                         <p className="font-medium text-[13px] text-gray-48">SHIPPING ADDRESS</p>
                     </div>
                     <div className="mt-4">
-                        <p className="font-normal text-[13px] text-dark-16 leading-4">3517 W. Gray St. Utica, Pennsylvania 57867</p>
+                        <p className="font-normal text-[13px] text-dark-16 leading-100">3517 W. Gray St. Utica, Pennsylvania 57867</p>
                     </div>
                     <div className="mt-[26px]  grid grid-cols-12 ">
                         <div className="col-span-4 mr-6">
                             <p className="text-dark-16 font-bold text-2xl">150</p>
-                            <p className="text-[13px] text-gray-48 font-medium leading-18">Total Order</p>
+                            <p className="text-[13px] text-gray-48 font-medium leading-100">Total Order</p>
                         </div>
                         <div className="col-span-4 mr-6">
                             <p className="text-dark-16 font-bold text-2xl">140</p>
-                            <p className="text-[13px] text-gray-48 font-medium leading-18">Completed</p>
+                            <p className="text-[13px] text-gray-48 font-medium leading-100">Completed</p>
                         </div>
                         <div className="col-span-4">
                             <p className="text-dark-16 font-bold text-2xl">10</p>
-                            <p className="text-[13px] text-gray-48 font-medium leading-18">Canceled</p>
+                            <p className="text-[13px] text-gray-48 font-medium leading-100">Canceled</p>
                         </div>
                     </div>
                 </div>
                 <div className=" col-span-12 mt-1">
                     <div className="text-sm font-medium text-center text-gray-500 px-8">
                         <ul className="flex flex-wrap -mb-px">
-                            <li className="mr-2">
-                                <a href="#" className="inline-block py-4 px-6 text-blue-600 border-b-2 border-blue-600 ">All Orders</a>
-                            </li>
-                            <li className="mr-2">
+                            {
+                                tabOption?.map((tab) =>
+                                    <li key={tab.value} className="mr-2" onClick={() => {
+                                        setActiveTab(tab.value)
+                                    }}>
+                                        <a href="#" className={`inline-block py-4 px-6  ${activeTab === tab.value ? "text-blue-600 border-b-2 border-blue-600" : "text-gray-48"}`}>{tab.label}</a>
+                                    </li>
+                                )
+                            }
+                            {/* <li className="mr-2">
                                 <a href="#" className="inline-block p-4 text-gray-48 " aria-current="page">Completed</a>
                             </li>
                             <li className="mr-2">
                                 <a href="#" className="inline-block p-4 text-gray-48">Canceled</a>
-                            </li>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
