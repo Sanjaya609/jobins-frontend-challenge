@@ -6,6 +6,7 @@ import Brand from '../assets/star.svg'
 import AddCircle from '../assets/circle-plus.svg'
 import Box from '../assets/box.svg'
 import { useState } from 'react'
+import { List } from 'phosphor-react'
 
 
 const sidebarOptions = [
@@ -46,28 +47,32 @@ function Sidebar() {
     const [selectedOption, setSelectedOption] = useState("Dashboard")
     return (
         <>
-            <aside aria-label="Sidebar">
+            <aside aria-label="Sidebar" className='lg:w-1/5 2xl:w-1/6'>
                 <div className="h-full overflow-y-auto">
-                    <div className="title px-[18px] py-5 flex w-full justify-between items-center" >
-                        <div className='flex'><img src={Logo} alt="company-logo" className='mr-2.5' />
+                    <div className='mr-2 lg:hidden px-[18px] my-5 xss:flex xss:justify-center' >
+                        <List size={20} />
+                    </div>
+                    <div className="title px-[18px] py-5 md:mb-0 xss:mb-4 flex w-full justify-between items-center xs:hidden lg:flex" >
+                        <div className='flex' >
+                            <img src={Logo} alt="company-logo" className='mr-2.5' />
                             <p className='font-bold text-3xl leading-6 '>JoBins</p>
                         </div>
                         <img src={LogoIcon} alt='indent-decrease' />
                     </div>
                     {
                         sidebarOptions?.map((option) =>
-                            <div key={option.title}>
-                                <div className="title px-[30px] py-[15px] flex w-full justify-between items-center" >
+                            <div key={option.title} className='xss:mt-4 md:mt-0'>
+                                <div className="title px-[30px] py-[15px] flex w-full justify-between items-center xs:hidden lg:flex"  >
                                     <p className='text-[11px] text-gray-48 leading-14 font-normal'>{option?.title}</p>
                                 </div>
                                 <ul className="space-y-2 px-3.5">
                                     {
                                         option?.children?.map((child) =>
                                             <li key={child.label} onClick={() => setSelectedOption(child.label)}>
-                                                <a href="#" className={`flex items-center px-4 py-[9px]  rounded-lg  ${selectedOption === child.label ? "text-dark-16 bg-gray-32" : "text-gray-48"}
+                                                <a href="#" className={`flex items-center md:px-4 md:py-[9px] xss:mb-4 mb:mb-0  rounded-lg  ${selectedOption === child.label ? "text-dark-16 bg-gray-32" : "text-gray-48"}
                                                 hover:text-dark-16 hover:bg-gray-32`}>
-                                                    <img src={child.icon} alt='smart-home-dashboard' className='mr-2' style={{ fill: "red" }} />
-                                                    <p className='font-semibold'>{child?.label}</p>
+                                                    <img src={child.icon} alt='smart-home-dashboard' className='mr-2 ' style={{ fill: "red" }} />
+                                                    <p className='font-semibold xs:hidden lg:flex'>{child?.label}</p>
                                                 </a>
                                             </li>
                                         )
@@ -76,46 +81,6 @@ function Sidebar() {
                             </div>
                         )
                     }
-                    {/* <div className="title px-[30px] py-[15px] flex w-full justify-between items-center" >
-                        <p className='text-[11px] text-gray-48 leading-14 font-normal'>MAIN MENU</p>
-                    </div>
-                    <ul className="space-y-2 px-3.5">
-                        <li>
-                            <a href="#" className="flex items-center px-4 py-[9px] text-dark-16 rounded-lg bg-gray-32">
-                                <img src={Dashboard} alt='smart-home-dashboard' className='mr-2' />
-                                <p className='font-semibold'>Dashboard</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="flex items-center px-4 py-[9px] text-gray-48 rounded-lg hover:bg-gray-32">
-                                <img src={Cart} alt='smart-home-dashboard' className='mr-2' />
-                                <p className='font-normal'>Order Management</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="flex items-center px-4 py-[9px] text-gray-48 rounded-lg hover:bg-gray-32">
-                                <img src={Brand} alt='smart-home-dashboard' className='mr-2' />
-                                <p className='font-normal'>Brand</p>
-                            </a>
-                        </li>
-                    </ul>
-                    <div className="title px-[30px] pt-[30px] pb-[15px] flex w-full justify-between items-center" >
-                        <p className='text-[11px] text-gray-48 leading-14 font-normal'>PRODUCTS</p>
-                    </div>
-                    <ul className="space-y-2 px-3.5">
-                        <li>
-                            <a href="#" className="flex items-center px-4 py-[9px] text-gray-48 rounded-lg hover:bg-gray-32">
-                                <img src={AddCircle} alt='smart-home-dashboard' className='mr-2' />
-                                <p className='font-normal'>Add Products</p>
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#" className="flex items-center px-4 py-[9px] text-gray-48 rounded-lg hover:bg-gray-32">
-                                <img src={Box} alt='smart-home-dashboard' className='mr-2' />
-                                <p className='font-normal'>Product List</p>
-                            </a>
-                        </li>
-                    </ul> */}
                 </div>
             </aside>
 

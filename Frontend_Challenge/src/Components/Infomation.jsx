@@ -22,14 +22,19 @@ function Infomation() {
     return (
         <div className="col-span-12 mt-4">
             <div className="bg-white rounded-2xl w-full grid grid-cols-12 pt-6 px-10">
-                <div className=" sm:col-span-12 md:col-span-6 lg:col-span-4 flex items-center h-full border-r border-gray-64 pt-[33px] pb-[38px]">
+                <div className=" xss:col-span-12 xl:col-span-4 
+                flex items-center xss:justify-center 
+                h-full xss:border-b xl:border-b-0 xl:border-r 
+                border-gray-64 xl:pt-[33px] xl:pb-[38px] xss:py-4">
                     <div className="w-[72px] h-[72px] bg-purple-16 rounded-full border-[7px] border-purple-32 mr-4" />
                     <div>
                         <p className="text-lg text-dark-16 font-semibold leading-100">Robert Fox</p>
                         <p className="text-[15px] text-gray-48 font-normal leading-100">robert@gmail.com</p>
                     </div>
                 </div>
-                <div className="sm:col-span-6 md:col-span-6 lg:col-span-4  px-6 flex h-full border-r border-gray-64 flex-col pb-[35px]">
+                <div className="xss:col-span-12 sm:col-span-6  xl:col-span-4 px-6 flex 
+                h-full sm:border-r xss:border-b sm:border-b-0 border-gray-64 flex-col pb-[35px]
+                xl:mt-0 xss:mt-4">
                     <div>
                         <p className="font-medium text-[13px] text-gray-48">PERSONAL INFORMATION</p>
                     </div>
@@ -46,7 +51,9 @@ function Infomation() {
                         </div>
                     </div>
                 </div>
-                <div className="sm:col-span-6 md:col-span-6 lg:col-span-4  px-6 flex h-full flex-col pb-[35px]">
+                <div className="xss:col-span-12 sm:col-span-6  xl:col-span-4 px-6 flex 
+                h-full flex-col pb-[35px]
+                xl:mt-0 xss:mt-4 sm:pt-0 xss:pt-4 ">
                     <div>
                         <p className="font-medium text-[13px] text-gray-48">SHIPPING ADDRESS</p>
                     </div>
@@ -70,7 +77,7 @@ function Infomation() {
                 </div>
                 <div className=" col-span-12 mt-1">
                     <div className="text-sm font-medium text-center text-gray-500 px-8">
-                        <ul className="flex flex-wrap -mb-px">
+                        <ul className="flex -mb-px">
                             {
                                 tabOption?.map((tab) =>
                                     <li key={tab.value} className="mr-2" onClick={() => {

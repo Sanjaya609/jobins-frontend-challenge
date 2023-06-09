@@ -1,10 +1,10 @@
+import { ArrowUp, CaretDown, CaretUp, MagnifyingGlass } from 'phosphor-react'
+import USA from '../assets/Usa.svg'
+import Australia from '../assets/australia.svg'
 import Bell from '../assets/bell.svg'
+import Brazil from '../assets/brazil.svg'
 import Business from '../assets/business.svg'
 import Yen from '../assets/yen.svg'
-import USA from '../assets/Usa.svg'
-import { CaretUp, ArrowUp, CaretDown, MagnifyingGlass } from 'phosphor-react'
-import Brazil from '../assets/brazil.svg'
-import Australia from '../assets/australia.svg'
 import Infomation from './Infomation'
 import Table from './Table'
 
@@ -13,6 +13,7 @@ function Main() {
         <main className="pl-[26px] pr-7 grow bg-gray-16 pt-2 pb-[30px]">
             <header>
                 <div className="flex w-full py-3">
+
                     <div className="grow py-2">
                         <p className="font-bold text-2xl leading-100">Dashboard</p>
                     </div>
@@ -31,9 +32,9 @@ function Main() {
                 </div>
             </header>
             <div className="grid grid-cols-12 gap-4">
-                <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 ">
+                <div className="xs:col-span-12 sm:col-span-6 md:col-span-6 xl:col-span-4 ">
                     <div className='flex  p-6 bg-white rounded-2xl w-full h-full' >
-                        <div className='grow border-e border-gray-64 flex justify-center items-center '>
+                        <div className='grow border-e border-gray-64 md:flex xss:hidden justify-center items-center px-4 '>
                             <img src={Business} alt="business-growth" />
                         </div>
                         <div className='flex flex-col ml-[33px]'>
@@ -52,7 +53,7 @@ function Main() {
                         </div>
                     </div>
                 </div>
-                <div className="sm:col-span-12 md:col-span-6 lg:col-span-4 ">
+                <div className=" xs:col-span-12  sm:col-span-6 md:col-span-6 xl:col-span-4 ">
                     <div className='bg-white rounded-2xl w-full p-6' >
                         <div className=' flex  mb-10 '>
                             <img src={Yen} alt="business-growth" />
@@ -73,9 +74,9 @@ function Main() {
                         </div>
                     </div>
                 </div>
-                <div className="sm:col-span-12 md:col-span-12 lg:col-span-4 ">
+                <div className=" xs:col-span-12 xl:col-span-4 ">
                     <div className='bg-white rounded-2xl w-full p-6' >
-                        <div className="flex w-full items-center mb-[18px]">
+                        <div className="flex w-full items-center mb-5">
                             <div className='flex grow items-center mr-4'>
                                 <div className='flex items-center mr-4' >
                                     <div className='mr-4 '>
@@ -95,7 +96,7 @@ function Main() {
                                 <span>25.8%</span>
                             </div>
                         </div>
-                        <div className="flex w-full items-center mb-[18px]">
+                        <div className="flex w-full items-center mb-5">
                             <div className='flex grow items-center mr-4'>
                                 <div className='flex items-center mr-4' >
                                     <div className='mr-4 '>

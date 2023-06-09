@@ -108,6 +108,8 @@ export default {
         '33px': '33px'
       },
       screens: {
+        'xss': '0px',
+        'xs': '400px',
         'sm': '640px',
         'md': '768px',
         'lg': '1024px',
