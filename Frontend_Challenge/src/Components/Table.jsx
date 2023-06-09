@@ -99,7 +99,7 @@ function Table() {
 
                     </tbody>
                 </table>
-                <nav className="flex items-center justify-between px-6 py-[26px]">
+                <footer className="flex items-center justify-between px-6 py-[26px]">
                     <div className="flex leading-100 font-normal text-gray-48 items-center">
                         <div className="mr-2">
                             <p className={paginationDescStyle}>
@@ -142,7 +142,7 @@ function Table() {
                             </p>
                         </li>
                     </ul>
-                </nav >
+                </footer >
             </div >
         </div >
     )

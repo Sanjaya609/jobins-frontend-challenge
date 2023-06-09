@@ -1,36 +1,17 @@
 import { ArrowUp, CaretDown, CaretUp, MagnifyingGlass } from 'phosphor-react'
 import USA from '../assets/Usa.svg'
 import Australia from '../assets/australia.svg'
-import Bell from '../assets/bell.svg'
 import Brazil from '../assets/brazil.svg'
 import Business from '../assets/business.svg'
 import Yen from '../assets/yen.svg'
-import Infomation from './Infomation'
 import Table from './Table'
+import Header from './Header'
+import Information from './Information'
 
 function Main() {
     return (
         <main className="pl-[26px] pr-7 grow bg-gray-16 pt-2 pb-[30px]">
-            <header>
-                <div className="flex w-full py-3">
-
-                    <div className="grow py-2">
-                        <p className="font-bold text-2xl leading-100">Dashboard</p>
-                    </div>
-                    <div className='flex justify-between items-center'>
-                        <div className='mr-6 relative h-[26px] w-[26px] flex items-center justify-center'>
-                            <img src={Bell} alt="notification-bell" />
-                            <div className='h-[18px] w-[18px] absolute right-0 top-0 bg-red-16 rounded-full -mt-1 -mr-1.5 flex items-center justify-center'>
-                                <p className='text-[13px]'>4</p>
-                            </div>
-                        </div>
-                        <div className='h-38 w-38 relative'>
-                            <div className='h-full w-full bg-blue-16 rounded-full' />
-                            <div className='h-2 w-2 bg-green-16 rounded-full absolute right-0 bottom-0 border-2 ' />
-                        </div>
-                    </div>
-                </div>
-            </header>
+            <Header />
             <div className="grid grid-cols-12 gap-4">
                 <div className="xs:col-span-12 sm:col-span-6 md:col-span-6 xl:col-span-4 ">
                     <div className='flex  p-6 bg-white rounded-2xl w-full h-full' >
@@ -138,7 +119,7 @@ function Main() {
                         </div>
                     </div>
                 </div>
-                <Infomation />
+                <Information />
                 <div className='col-span-12'>
                     <div className='flex w-full'>
                         <div className='grow'>

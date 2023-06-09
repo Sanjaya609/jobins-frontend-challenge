@@ -17,7 +17,7 @@ const tabOption = [
 
     }
 ]
-function Infomation() {
+function Information() {
     const [activeTab, setActiveTab] = useState("allOrder")
     return (
         <div className="col-span-12 mt-4">
@@ -101,4 +101,4 @@ function Infomation() {
     )
 }
 
-export default Infomation
+export default Information
